@@ -2,4 +2,7 @@
 /logs
 /npm-debug.log
 /node_modules
+/Dockerfile
+/LICENCE
+/Procfile
 .DS_Store
