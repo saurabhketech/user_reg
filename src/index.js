@@ -4,7 +4,6 @@ import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import initializeDb from './models/db';
-import middleware from './middleware';
 import api from './api';
 import config from './config.json';
 
@@ -27,9 +26,6 @@ app.use(bodyParser.urlencoded({
 }));
 // connect to db
 initializeDb(db => {
-
-    // internal middleware
-    app.use(middleware({ config, db }));
 
     // api router
     app.use(api({ config, db }));
