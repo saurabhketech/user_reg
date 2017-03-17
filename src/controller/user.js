@@ -1,4 +1,4 @@
-export default ({ config, db, data, res, next }) => {
+export default ({ db, data, res, next }) => {
 
     db.sync({ force: false }).then(function() {
         return db.create({
