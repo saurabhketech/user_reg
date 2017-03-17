@@ -26,7 +26,6 @@ app.use(bodyParser.urlencoded({
 }));
 // connect to db
 initializeDb(db => {
-
     // api router
     app.use(api({ config, db }));
 
