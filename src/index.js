@@ -28,7 +28,6 @@ app.use(bodyParser.urlencoded({
 initializeDb(db => {
     // api router
     app.use(api({ config, db }));
-
     app.server.listen(process.env.PORT || config.port);
 
     console.log(`Started on port ${app.server.address().port}`);

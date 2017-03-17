@@ -3,12 +3,11 @@ import express from 'express';
 import user from '../controller/user.js';
 
 export default ({ config, db }) => {
+    console.log(user)
     let api = express();
     api.post('/user/register', (req, res, next) => {
         let data = req.body;
-        api.post(user({ config, db, data }, function(result) {
-            res.json(result);
-        }));
+        api.post(user({ config, db, data, res, next }));
     });
 
     api.get('/', (req, res) => {
